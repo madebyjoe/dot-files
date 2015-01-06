@@ -10,11 +10,13 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ## System shortcuts
 alias cd_droid='cd ~/clinkle-android'
+alias cd_apk='cd ~/clinkle-android/Clinkle/build/outputs/apk'
 alias cd_ios='cd ~/clinkle-iphone'
 alias cd_cli='cd ~/clinkle-cli'
 alias cd_method='cd ~/Dropbox\ \(Personal\)/Method\ Medical'
 alias cd_nmc='cd ~/Dropbox\ \(Personal\)/Method\ Medical/MethodController'
 alias cd_nmbt='cd ~/Dropbox\ \(Personal\)/Method\ Medical/Method_Medical_Bluetooth'
+
 
 ## Subl
 alias subl_nmbt='cd_nmbt; subl .'
@@ -58,12 +60,16 @@ alias signup_dev='cd_cli; rake signup[wallet,2069491408,asldkfj@sdlkfj.flk,1111,
 alias signup_daily='cd_cli; rake signup[wallet,2069491408,asldkfj@sdlkfj.flk,1111,"Joe Hunterson",daily];'
 alias rpci='cd_ios; rake pod:clean_install'
 
+alias ping-daily='printf "daily says > "; curl http://api-daily.clinkle.com/web/ping/status; printf "\n"'
+alias ping-dev='printf "dev says > "; curl https://api-dev.clinkle.com/web/ping/status; printf "\n"'
+alias ping-spec='printf "dev says > "; curl http://ios-test.srv.clinkle.com/web/ping/status; printf "\n"'
+alias ping-test='printf "test says > "; curl https://api-test.clinkle.com/web/ping/status; printf "\n"'
+alias ping-stage='printf "stage says > "; curl https://api-stage.clinkle.com/web/ping/status; printf "\n"'
+alias ping-prod='printf "prod says > "; curl https://api.clinkle.com/web/ping/status; printf "\n"'
+
 ## Tool Functions
-#Dimension of image
-function dim(){ sips $1 -g pixelWidth -g pixelHeight }
-function cd() { builtin cd "$@" && ls; }
 #Random git commit message
-rgc() {
+function rgc() {
     git commit -m"`curl -s http://whatthecommit.com/index.txt`"
 }
 #Top ten largest files in dir
@@ -73,7 +79,7 @@ alias l.='ls -d .* --color=auto'
 #which commands used the most
 alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
 # extract most file types
-extract () {
+function extract () {
     if [ -f $1 ] ; then
       case $1 in
         *.tar.bz2)   tar xjf $1     ;;
@@ -126,11 +132,3 @@ function j {
 function m {
   mark $1
 }
-
-## PINGING CLINKLE SERVERS
-alias ping-daily='printf "daily says > "; curl http://api-daily.clinkle.com/web/ping/status; printf "\n"'
-alias ping-dev='printf "dev says > "; curl https://api-dev.clinkle.com/web/ping/status; printf "\n"'
-alias ping-spec='printf "dev says > "; curl http://ios-test.srv.clinkle.com/web/ping/status; printf "\n"'
-alias ping-test='printf "test says > "; curl https://api-test.clinkle.com/web/ping/status; printf "\n"'
-alias ping-stage='printf "stage says > "; curl https://api-stage.clinkle.com/web/ping/status; printf "\n"'
-alias ping-prod='printf "prod says > "; curl https://api.clinkle.com/web/ping/status; printf "\n"'
