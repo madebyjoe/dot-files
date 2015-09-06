@@ -2,6 +2,7 @@
 export PATH=${PATH}:/Applications/android-sdk-macosx/platform-tools
 export PATH=${PATH}:/Applications/android-sdk-macosx/tools
 export PATH=${PATH}:/Applications/android-sdk-macosx/gradle-2.2.1/bin
+export PATH=${PATH}:/Applications/android-sdk-macosx/build-tools/22.0.1
 export PATH=${PATH}:/Users/joe-work/Library/arcanist/bin/
 export ANT_HOME=/usr/local/apache-ant-1.9.2
 export PATH=${PATH}:${ANT_HOME}/bin
@@ -9,14 +10,14 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM 
 
 ## System shortcuts
-alias cd_droid='cd ~/clinkle-android'
-alias cd_apk='cd ~/clinkle-android/Clinkle/build/outputs/apk'
-alias cd_ios='cd ~/clinkle-iphone'
-alias cd_cli='cd ~/clinkle-cli'
-alias cd_method='cd ~/Dropbox\ \(Personal\)/Method\ Medical'
-alias cd_nmc='cd ~/Dropbox\ \(Personal\)/Method\ Medical/MethodController'
-alias cd_nmbt='cd ~/Dropbox\ \(Personal\)/Method\ Medical/Method_Medical_Bluetooth'
+alias cd_method='cd ~/Dropbox/Method\ Medical'
+alias cd_nmc='cd ~/Dropbox/code/nMotion/MethodController'
+alias cd_nmc_apk='cd ~/Dropbox/code/nMotion/MethodController/MethodController/build/outputs/apk'
+alias cd_nmbt='cd ~/Dropbox/Atmel\ Studio/MethodControlCenter/nMotion/nMotion_Main'
+alias cd_code='cd ~/Dropbox/code'
+alias cd_design='cd ~/Dropbox/design'
 
+alias auto_dl='~/Dropbox/AutoDownload/'
 
 ## Subl
 alias subl_nmbt='cd_nmbt; subl .'
@@ -53,19 +54,6 @@ alias gbdl='git branch -d' # branch delete local
 
 # nice git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-#clinkle
-alias signup_test='cd_cli; rake signup[wallet,2069491408,asldkfj@sdlkfj.flk,1111,"Joe Hunterson",test];'
-alias signup_dev='cd_cli; rake signup[wallet,2069491408,asldkfj@sdlkfj.flk,1111,"Joe Hunterson",dev];'
-alias signup_daily='cd_cli; rake signup[wallet,2069491408,asldkfj@sdlkfj.flk,1111,"Joe Hunterson",daily];'
-alias rpci='cd_ios; rake pod:clean_install'
-
-alias ping-daily='printf "daily says > "; curl http://api-daily.clinkle.com/web/ping/status; printf "\n"'
-alias ping-dev='printf "dev says > "; curl https://api-dev.clinkle.com/web/ping/status; printf "\n"'
-alias ping-spec='printf "dev says > "; curl http://ios-test.srv.clinkle.com/web/ping/status; printf "\n"'
-alias ping-test='printf "test says > "; curl https://api-test.clinkle.com/web/ping/status; printf "\n"'
-alias ping-stage='printf "stage says > "; curl https://api-stage.clinkle.com/web/ping/status; printf "\n"'
-alias ping-prod='printf "prod says > "; curl https://api.clinkle.com/web/ping/status; printf "\n"'
 
 ## Tool Functions
 #Random git commit message
